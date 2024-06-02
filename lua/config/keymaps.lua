@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- 20240602: Cleanup
+-- Remove duplicate mappings set in default LazyVim
+
 local opts = { noremap = true, silent = true }
 
 -- shorten function name
@@ -9,8 +12,8 @@ local keymap = vim.keymap.set
 
 -- my go-tos
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
-keymap('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- vim.opt.hlsearch = true
+-- keymap('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Select complete document
 keymap('n', '<C-a>', 'ggVG', opts)
@@ -32,10 +35,10 @@ keymap('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move current line down' })
 
 -- Use CTRL+<hjkl> to switch between windows
 -- See `:help wincmd` for a list of all window commands
-keymap('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-keymap('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-keymap('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-keymap('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- keymap('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- keymap('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- keymap('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- keymap('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- 'H'/'L' to jump start/end of line
 keymap('n', 'H', '^', { desc = 'Move cursor to start (first char) of line' })
@@ -54,8 +57,6 @@ keymap('n', '<leader>os', ':Telescope find_files search_dirs={"~/KB"}<cr>', { de
 -- stylua: ignore
 keymap('n', '<leader>om', ':!mv % /Users/taz/KB/@INBOX<cr>:bd<cr>', { desc = 'Move file in current buffer to KB/@INBOX' })
 
--- Telescope (custom)
--- Lua
-vim.keymap.set('n', '<leader>fv', function()
-  require('telescope.builtin').find_files({ cwd = '~/KB/' })
-end, { desc = 'Find files in specific directory' })
+-- Telescope (custom) - Find Files in ~/KB/ directory
+-- stylua: ignore
+keymap('n', '<leader>fv', function() require('telescope.builtin').find_files({ cwd = '~/KB/' }) end, { desc = 'Find files KB directory' })
