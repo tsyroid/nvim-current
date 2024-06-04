@@ -64,6 +64,6 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 20
 
 -- For markdown files in Obsidian
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 1
 
 -- vim: ts=2 sts=2 sw=2 et
