@@ -60,3 +60,12 @@ keymap('n', '<leader>om', ':!mv % /Users/taz/KB/@INBOX<cr>:bd<cr>', { desc = 'Mo
 -- Telescope (custom) - Find Files in ~/KB/ directory
 -- stylua: ignore
 keymap('n', '<leader>fv', function() require('telescope.builtin').find_files({ cwd = '~/KB/' }) end, { desc = 'Find files KB directory' })
+
+-- Codeium
+-- From: https://github.com/omerxx/dotfiles/blob/master/nvim/lua/plugins/lazy.lua
+-- stylua: ignore start
+keymap('i', '<C-e>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+keymap('i', '<C-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+keymap('i', '<C-p>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+keymap('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+-- stylua: ignore end
