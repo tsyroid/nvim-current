@@ -2,9 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- 20240602: Cleanup
--- Remove duplicate mappings set in default LazyVim
-
 local opts = { noremap = true, silent = true }
 
 -- shorten function name
@@ -22,8 +19,8 @@ keymap('n', '<C-a>', 'ggVG', opts)
 keymap('n', '-', '<C-w>5<', opts)
 keymap('n', '+', '<C-w>5>', opts)
 
--- `jk` to exit insert mode
-keymap('i', 'jk', '<Esc>', opts)
+-- `jj` to exit insert mode without hitting Esc
+keymap('i', 'jj', '<Esc>', opts)
 
 -- keep indents active
 keymap('v', '<', '<gv', opts)
@@ -32,13 +29,6 @@ keymap('v', '>', '>gv', opts)
 -- Move lines up/down
 keymap('v', 'K', ":m '>-2<CR>gv=gv", { desc = 'Move current line up' })
 keymap('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move current line down' })
-
--- Use CTRL+<hjkl> to switch between windows
--- See `:help wincmd` for a list of all window commands
--- keymap('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- keymap('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- keymap('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- keymap('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- 'H'/'L' to jump start/end of line
 keymap('n', 'H', '^', { desc = 'Move cursor to start (first char) of line' })
@@ -68,4 +58,6 @@ keymap('i', '<C-e>', function() return vim.fn['codeium#Accept']() end, { expr = 
 keymap('i', '<C-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
 keymap('i', '<C-p>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 keymap('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
+-- keymap('n', '-', '<CMD>Oil --float<CR>', { desc = 'Open parent directory' })
 -- stylua: ignore end
