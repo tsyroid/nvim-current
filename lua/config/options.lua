@@ -66,4 +66,29 @@ vim.opt.scrolloff = 20
 -- For markdown files in Obsidian
 vim.opt.conceallevel = 1
 
+-- Ababreviations
+-- Because I don't know how to integration my separate abbreviations.lua file into /config/
+vim.cmd([[
+
+inoreabbrev @@ tsyroid at gmail.com
+inoreabbrev ccopy Copyright 2024 Tom Syroid, all rights reserved.
+
+inoreabbrev Tdate <C-R>=strftime("%Y-%m-%d")<CR>
+inoreabbrev Gdate <C-R>=strftime("%FT%T")<CR>
+iabbrev DT <C-R>=strftime("%Y-%m-%d @ %H:%M")<CR>
+iabbrev dt <C-R>=strftime("%a %b %d %Y %T %Z")<CR>
+
+inoreabbrev tasko - [ ]
+inoreabbrev taskc - [x]
+
+inoreabbrev seperate separate
+inoreabbrev definately definitely
+inoreabbrev accomadate accommodate
+inoreabbrev dont don't
+inoreabbrev btw by the way
+inoreabbrev im I'm
+inoreabbrev youre you're
+
+]])
+
 -- vim: ts=2 sts=2 sw=2 et

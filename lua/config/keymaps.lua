@@ -22,6 +22,12 @@ keymap('n', '+', '<C-w>5>', opts)
 -- `jj` to exit insert mode without hitting Esc
 keymap('i', 'jj', '<Esc>', opts)
 
+-- 'jk' to insert a task prefix: '- [ ] '
+-- Note: This really should be an abbreviation...
+-- keymap('i', 'kk', '- [ ] ', opts)
+-- NOTE: Added to abbreviations in config/options.lua,
+-- but keeping this here for now...
+
 -- keep indents active
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
