@@ -14,8 +14,8 @@ return {
 
     workspaces = {
       {
-        name = 'KB',
-        path = '~/KB/',
+        name = 'Vault',
+        path = '~/Vault/',
       },
     },
     {
@@ -36,8 +36,8 @@ return {
     notes_subdir = '@INBOX',
 
     daily_notes = {
-      folder = 'Daily Notes',
-      date_format = 'Notes-%Y%m%d',
+      folder = '06-Daily/Notes',
+      date_format = '%Y%m%d',
       time_format = '%H:%M',
       template = 'daily-notes.md',
     },
@@ -49,7 +49,7 @@ return {
 
     -- Optional, for templates (see below).
     templates = {
-      folder = 'Templates',
+      folder = '99-Meta/Templates',
       date_format = '%Y-%m-%d',
       time_format = '%H:%M',
       -- A map for custom variables, the key should be the variable and the value a function
@@ -71,10 +71,10 @@ return {
         end,
         opts = { buffer = true, expr = true },
       },
-      -- move file in current buffer to KB/@INBOX
+      -- move file in current buffer to Vault/@INBOX
       -- ['<leader>om'] = {
-      --   ":!mv '%:p' /Users/taz/KB/@INBOX<cr>:bd<cr>",
-      --   desc = 'Move file in current buffer to KB/@INBOX',
+      --   ":!mv '%:p' /Users/taz/Vault/@INBOX<cr>:bd<cr>",
+      --   desc = 'Move file in current buffer to Vault/@INBOX',
       --   mode = 'n',
       -- },
     },
