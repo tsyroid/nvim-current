@@ -65,6 +65,7 @@ vim.opt.scrolloff = 20
 
 -- For markdown files in Obsidian
 -- vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0
 
 -- Ababreviations
 -- Because I don't know how to integration my separate abbreviations.lua file into /config/
