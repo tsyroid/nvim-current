@@ -46,7 +46,7 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'` and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '·' }
 
 -- backspace
 vim.opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position
@@ -67,7 +67,7 @@ vim.opt.scrolloff = 20
 -- vim.opt.conceallevel = 1
 vim.opt.conceallevel = 0
 
--- Ababreviations
+-- Abbreviations
 -- Because I don't know how to integration my separate abbreviations.lua file into /config/
 vim.cmd([[
 
